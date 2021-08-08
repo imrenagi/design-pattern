@@ -1,20 +1,10 @@
 package main
 
 import (
-  "fmt"
-  "time"
-
-  "github.com/imrenagi/design-pattern/factory"
+  "github.com/imrenagi/design-pattern/adapter"
 )
 
-
 func main() {
-
-  var contentCreator factory.ContentCreator
-  contentCreator = &factory.Imre{}
-
-  content := contentCreator.Produce(time.Now())
-  content.Play()
-  fmt.Println(contentCreator.Type())
-
+  adapter.Execute()
 }
+

@@ -14,6 +14,7 @@ type House struct {
 
 func NewHouse(numOfWindows int, numOfDoors int, hasGarage bool, hasSwimmingPool bool) *House {
 
+
 	return &House{
 		numOfWindows: numOfWindows,
 		numOfDoors: numOfDoors,
@@ -52,7 +53,7 @@ func (b *HouseBuilder) CreateHouse() (*House, error) {
 	return &b.house, nil
 }
 
-func init() {
+func Execute() {
 	hb := HouseBuilder{}
 	house, err := hb.
 		BuildDoor().

@@ -3,7 +3,14 @@ package factory
 import (
   "fmt"
   "time"
+
+  "github.com/imrenagi/design-pattern/singleton"
 )
+
+func Execute() {
+  db := singleton.GetDBInstanceWithLock()
+  db.GetUser("nagi")
+}
 
 type Content interface {
   Play()
