@@ -14,10 +14,14 @@ type ElectronicKey struct {
 
 func (e ElectronicKey) Open() {
   fmt.Println("this is electronic key")
-  e.ConnectToWifi()
+  ok := e.ConnectToWifi()
+  if ok {
+    e.opener.Open()
+  }
 }
 
-func (e ElectronicKey) ConnectToWifi() {
+func (e ElectronicKey) ConnectToWifi() bool {
   fmt.Println("connecting to wifi")
   // e.opener.Open()
+  return false
 }

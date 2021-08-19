@@ -14,6 +14,19 @@ type House struct {
 
 func NewHouse(numOfWindows int, numOfDoors int, hasGarage bool, hasSwimmingPool bool) *House {
 
+	if numOfWindows > 5 {
+		numOfWindows = 5
+	}
+
+	if numOfDoors > 2 {
+		numOfWindows = 2
+	}
+
+	if hasGarage && numOfWindows == 5 {
+		hasGarage = true
+	} else {
+		hasGarage = false
+	}
 
 	return &House{
 		numOfWindows: numOfWindows,
@@ -27,9 +40,9 @@ type HouseBuilder struct {
 	house House
 }
 
-func (b *HouseBuilder) BuildWindow() *HouseBuilder {
-	if b.house.numOfWindows < 5 {
-		b.house.numOfWindows++
+func (b *HouseBuilder) SetWindow(window int) *HouseBuilder {
+	if b.house.numOfWindows < window {
+		b.house.numOfWindows = window
 	}
 	return b
 }
@@ -46,7 +59,7 @@ func (b *HouseBuilder) SetGarage(t string) *HouseBuilder {
 	return b
 }
 
-func (b *HouseBuilder) CreateHouse() (*House, error) {
+func (b *HouseBuilder) GetResult() (*House, error) {
 	if !b.house.hasGarage {
 		return nil, fmt.Errorf("a house must have a garage")
 	}
@@ -57,7 +70,7 @@ func Execute() {
 	hb := HouseBuilder{}
 	house, err := hb.
 		BuildDoor().
-		SetGarage("large").CreateHouse()
+		SetGarage("large").GetResult()
 	if err != nil {
 		log.Fatal(err)
 	}

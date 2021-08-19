@@ -16,10 +16,11 @@ func Execute() {
   lc := LowerCaseHandler{}
   lc.SetNext(&sr)
 
-  st := lc.Process("THE titanic")
-  st2 := sr.Process("Hello      world")
 
-  fmt.Println(st2)
+  st := lc.Process("THE titanic")
+  // st2 := sr.Process("Hello      world")
+
+  // fmt.Println(st2)
   fmt.Println(st)
 
 }
