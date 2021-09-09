@@ -1,10 +1,9 @@
 package main
 
 import (
-  "github.com/imrenagi/design-pattern/adapter"
+  "github.com/imrenagi/design-pattern/strategy"
 )
 
 func main() {
-  adapter.Execute()
+  strategy.Execute()
 }
-
