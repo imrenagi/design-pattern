@@ -22,6 +22,17 @@ func (o *otp) genRandomOTP(len int) string {
 
 func (o *otp) saveOTPCache(otp string) {
   fmt.Printf("OTP: saving otp: %s to cache\n", otp)
+
+  type Car struct {
+    Name string
+    Color string
+  }
+
+  cars := []Car{}
+  for _, it := range cars {
+    it.Name
+  }
+
 }
 
 func (o *otp) genAndSendOTP(otpLength int) error {
