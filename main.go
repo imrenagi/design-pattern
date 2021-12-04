@@ -1,9 +1,9 @@
 package main
 
 import (
-  "github.com/imrenagi/design-pattern/memento"
+  "github.com/imrenagi/design-pattern/iterator"
 )
 
 func main() {
-  memento.Execute()
+  iterator.Execute()
 }
